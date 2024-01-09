@@ -38,9 +38,12 @@ def test_valid_login():
     sign_in.click()
     time.sleep(3)
 
-    Login_check = driver.find_element(By.XPATH, "//span[@data-qa = 'sovatodiqu']")
-    assert Login_check.is_displayed(), "Welcome message not displayed, login unsuccesful"
-    print(Login_check)
+    assert driver.current_url == "https://app.vwo.com/#/dashboard"
+    print(driver.title)
+
+    #Login_check = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/div[2]/div[2]/div/div/div[1]/div[1]/p/span[2]")
+    #print(Login_check.text)
+    #assert Login_check.is_displayed(), "Welcome message not displayed, login unsuccesful"
 
     time.sleep(5)
 
