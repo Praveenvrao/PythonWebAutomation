@@ -2,9 +2,9 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome()
-driver.get('https://www.amazon.in/')
-driver.maximize_window()
+# driver = webdriver.Chrome()
+# driver.get('https://www.amazon.in/')
+# driver.maximize_window()
 
 #Locator matching with single element
 #element1 = driver.find_element(By.XPATH,"//input[@id = 'twotabsearchtextbox']")
@@ -38,5 +38,39 @@ driver.maximize_window()
 #driver.quit()
 
 #Element not available - then it will give count 0
-element3 = driver.find_elements(By.XPATH,"//div[@class = 'navFooterCol']")
-print(len(element3))
+# element3 = driver.find_elements(By.XPATH,"//div[@class = 'navFooterCol']")
+# print(len(element3))
+
+
+driver = webdriver.Chrome()
+driver.get("https://demo.nopcommerce.com/")
+driver.maximize_window()
+
+#Locator matching with single element
+# element1 = driver.find_element(By.XPATH, "//input[@id ='small-searchterms']")
+# print(element1.text)
+# print(element1.get_attribute('placeholder'))
+
+#locator matching with multiple elements
+# element2 = driver.find_element(By.XPATH, "//div[@class = 'footer']//a")
+# print(element2.text)
+#
+# #locator not matching with any element
+# element2 = driver.find_element(By.XPATH, "//div[@class = 'djdooter']//a")
+# print(element2.text)
+
+#FIND ELEMENTS
+#Locator matching with single element
+# element1 = driver.find_elements(By.XPATH, "//input[@id ='small-searchterms']")
+# print(len(element1))
+# print(element1[0])
+
+#Locator matching with multiple elements
+# element2 = driver.find_elements(By.XPATH, "//div[@class = 'footer']//a")
+# print(len(element2))
+# for eles in element2:
+#     print(eles.text)
+
+#locator not matching with any element
+element2 = driver.find_elements(By.XPATH, "//div[@class = 'foohwwjter']//a")
+print(len(element2))

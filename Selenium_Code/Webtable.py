@@ -20,9 +20,19 @@ data2 = driver.find_element(By.XPATH, "//table[@name = 'BookTable']//tr[4]/td[3]
 print(data1, "-----", data2)
 
 # 3 Read all the rows and coloms data
+#
+# for r in range(2, no_rows+1):
+#     for c in range(1, no_clms+1):
+#         totaldata = driver.find_element(By.XPATH, "//table[@name = 'BookTable']//tr["+str(r)+"]/td["+str(c)+"]").text
+#         print(totaldata,end="             ")
+#     print('')
+
+# 4 Read data based condition (Like bookname whose author is mukesh)
 
 for r in range(2, no_rows+1):
-    for c in range(1, no_clms+1):
-        totaldata = driver.find_element(By.XPATH, "//table[@name = 'BookTable']//tr["+str(r)+"]/td["+str(c)+"]").text
-        print(totaldata,end="             ")
-    print('')
+    Authorname = driver.find_element(By.XPATH, "//table[@name = 'BookTable']//tr["+str(r)+"]/td[2]").text
+    if Authorname == "Amit":
+        bookname = driver.find_element(By.XPATH, "//table[@name = 'BookTable']//tr["+str(r)+"]/td[1]").text
+        price = driver.find_element(By.XPATH, "//table[@name = 'BookTable']//tr["+str(r)+"]/td[4]").text
+        print(bookname, "  ", Authorname, "  ", price)
+
